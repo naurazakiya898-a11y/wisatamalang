@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Rekomendasi kuliner khas Malang, Jawa Timur lengkap dengan deskripsi dan informasi menarik.">
+  <meta name="keywords" content="kuliner Malang, makanan khas Malang, rekomendasi kuliner Jawa Timur">
+  <meta name="author" content="Kuliner Malang">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuliner Malang - Rekomendasi Makanan Khas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #00695c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      width: 90%;
+      margin: auto;
+      padding: 20px;
+    }
+    .search-box {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .search-box input {
+      width: 60%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    .kuliner-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+    }
+    .kuliner-card img {
+      width: 150px;
+      height: 100px;
+      border-radius: 8px;
+      margin-right: 20px;
+      object-fit: cover;
+    }
+    .kuliner-card h2 {
+      margin: 0;
+      color: #00695c;
+    }
+    footer {
+      background-color: #00695c;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kuliner Malang</h1>
+    <p>Rekomendasi makanan khas Malang, Jawa Timur</p>
+  </header>
+
+  <div class="container">
+    <!-- Search Box -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Cari kuliner (contoh: bakso, rawon, pecel)...">
+    </div>
+
+    <!-- Kuliner Cards -->
+    <div class="kuliner-card" data-category="gurih daging bakso">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Bakso_Malang.jpg" alt="Bakso Malang">
+      <div>
+        <h2>Bakso Malang</h2>
+        <p>Bakso Malang terkenal dengan variasi isi seperti bakso halus, bakso urat, tahu isi, siomay, dan pangsit goreng. Kuahnya gurih dan segar.</p>
+      </div>
+    </div>
+
+    <div class="kuliner-card" data-category="gurih sup daging rawon">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Rawon.jpg" alt="Rawon">
+      <div>
+        <h2>Rawon</h2>
+        <p>Rawon adalah sup daging khas Jawa Timur dengan kuah hitam dari kluwek. Rasanya gurih dan biasanya disajikan dengan nasi hangat.</p>
+      </div>
+    </div>
+
+    <div class="kuliner-card" data-category="sayuran pedas kacang pecel">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Pecel.jpg" alt="Nasi Pecel">
+      <div>
+        <h2>Nasi Pecel</h2>
+        <p>Nasi pecel terdiri dari sayuran rebus dengan sambal kacang khas. Di Malang, pecel sering disajikan dengan rempeyek atau tempe goreng.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Kuliner Malang | Semua hak cipta dilindungi</p>
+  </footer>
+
+  <script>
+    // Fungsi pencarian
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+      let filter = this.value.toLowerCase();
+      let cards = document.getElementsByClassName("kuliner-card");
+
+      for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+        let category = cards[i].getAttribute("data-category").toLowerCase();
+
+        if (title.includes(filter) || category.includes(filter)) {
+          cards[i].style.display = "flex";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
