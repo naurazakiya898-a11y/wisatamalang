@@ -1,130 +1,311 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Rekomendasi kuliner khas Malang, Jawa Timur lengkap dengan deskripsi dan informasi menarik.">
-  <meta name="keywords" content="kuliner Malang, makanan khas Malang, rekomendasi kuliner Jawa Timur">
-  <meta name="author" content="Kuliner Malang">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kuliner Malang - Rekomendasi Makanan Khas</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background-color: #00695c;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    .container {
-      width: 90%;
-      margin: auto;
-      padding: 20px;
-    }
-    .search-box {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .search-box input {
-      width: 60%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-    .kuliner-card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      padding: 15px;
-      display: flex;
-      align-items: center;
-    }
-    .kuliner-card img {
-      width: 150px;
-      height: 100px;
-      border-radius: 8px;
-      margin-right: 20px;
-      object-fit: cover;
-    }
-    .kuliner-card h2 {
-      margin: 0;
-      color: #00695c;
-    }
-    footer {
-      background-color: #00695c;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajah Malang | Panduan Wisata Lokal Terlengkap</title>
+    
+    <!-- Meta Tags untuk SEO Google -->
+    <meta name="description" content="Panduan wisata terlengkap Kota Malang. Informasi sejarah, harga tiket, dan tips berkunjung ke Kayutangan, Museum Angkut, Alun-Alun, dan Tugu Malang.">
+    <meta name="keywords" content="Wisata Malang, Kayutangan Heritage, Museum Angkut, Alun-Alun Malang, Tugu Malang, Panduan Wisata">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f8f9fa;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1583032015879-e50d332bb330?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+        }
+
+        /* Navbar Custom */
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar-brand { font-weight: 700; letter-spacing: 1px; }
+
+        /* Card Wisata */
+        .card-wisata {
+            border: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .card-wisata:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .card-title { font-weight: 600; color: #2c3e50; }
+        
+        /* Modal Styling */
+        .modal-content { border-radius: 20px; border: none; }
+        .modal-header { border-radius: 20px 20px 0 0; }
+        .info-tag {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 2px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        .table-info th { width: 40%; background-color: #f1f3f5; }
+
+        footer { background: #212529; color: #bdc3c7; padding: 40px 0; }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Kuliner Malang</h1>
-    <p>Rekomendasi makanan khas Malang, Jawa Timur</p>
-  </header>
 
-  <div class="container">
-    <!-- Search Box -->
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Cari kuliner (contoh: bakso, rawon, pecel)...">
+    <!-- Navigasi -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">JELAJAH MALANG</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#wisata">Destinasi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tentang">Tentang Proyek</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="beranda">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3">Malang Menunggumu</h1>
+            <p class="lead mb-4">Panduan wisata terlengkap untuk menjelajahi sudut estetik dan bersejarah di Bumi Arema.</p>
+            <a href="#wisata" class="btn btn-warning btn-lg px-5 fw-bold">Mulai Jelajah</a>
+        </div>
+    </section>
+
+    <!-- Section Destinasi -->
+    <section class="container my-5 py-5" id="wisata">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Destinasi Utama</h2>
+            <div class="mx-auto" style="width: 80px; height: 4px; background: #e67e22;"></div>
+            <p class="text-muted mt-3">Klik "Baca Selengkapnya" untuk panduan detail setiap lokasi.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Wisata 1: Kayutangan -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 card-wisata shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="fs-1 mb-3">🏢</div>
+                        <h4 class="card-title">Kayutangan</h4>
+                        <p class="card-text text-muted">Nuansa klasik Eropa di jantung kota tua Malang.</p>
+                        <button class="btn btn-outline-dark w-100 mt-3" data-bs-toggle="modal" data-bs-target="#modalKayutangan">Baca Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wisata 2: Museum Angkut -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 card-wisata shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="fs-1 mb-3">🚗</div>
+                        <h4 class="card-title">Museum Angkut</h4>
+                        <p class="card-text text-muted">Koleksi transportasi dunia dengan zona film Hollywood.</p>
+                        <button class="btn btn-outline-dark w-100 mt-3" data-bs-toggle="modal" data-bs-target="#modalMuseum">Baca Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wisata 3: Alun-Alun -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 card-wisata shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="fs-1 mb-3">🌳</div>
+                        <h4 class="card-title">Alun-Alun</h4>
+                        <p class="card-text text-muted">Ruang terbuka hijau terbaik untuk bersantai keluarga.</p>
+                        <button class="btn btn-outline-dark w-100 mt-3" data-bs-toggle="modal" data-bs-target="#modalAlun">Baca Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wisata 4: Tugu -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 card-wisata shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="fs-1 mb-3">🗼</div>
+                        <h4 class="card-title">Tugu Malang</h4>
+                        <p class="card-text text-muted">Ikon kemerdekaan dengan kolam teratai yang menawan.</p>
+                        <button class="btn btn-outline-dark w-100 mt-3" data-bs-toggle="modal" data-bs-target="#modalTugu">Baca Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tentang -->
+    <section class="bg-white py-5" id="tentang">
+        <div class="container text-center">
+            <h3 class="fw-bold">Tentang Project Ini</h3>
+            <p class="text-muted mx-auto" style="max-width: 700px;">
+                Website ini dirancang untuk memberikan informasi komprehensif bagi wisatawan yang ingin mengunjungi Malang. Data diperbarui secara berkala untuk memastikan keakuratan harga tiket dan jam operasional.
+            </p>
+        </div>
+    </section>
+
+    <!-- MODAL DETAIL -->
+
+    <!-- Modal Kayutangan -->
+    <div class="modal fade" id="modalKayutangan" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title fw-bold">Eksplorasi: Kayutangan Heritage</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <span class="info-tag">#Sejarah #Estetik #KotaTua</span>
+                    <h6 class="fw-bold">Sejarah Singkat</h6>
+                    <p>Kayutangan adalah kawasan komersial tertua di Malang. Sejak era 1920-an, wilayah ini menjadi pusat mode dan peradaban kolonial Belanda. Saat ini, kawasan ini dihidupkan kembali sebagai destinasi "Heritage Walk".</p>
+                    
+                    <h6 class="fw-bold mt-4">Aktivitas Utama</h6>
+                    <ul>
+                        <li><strong>Jelajah Kampung:</strong> Masuk ke pemukiman warga yang memiliki rumah asli era kolonial.</li>
+                        <li><strong>Wisata Kuliner:</strong> Menikmati kopi di kafe retro atau makan malam di Toko Oen.</li>
+                        <li><strong>Fotografi:</strong> Memanfaatkan arsitektur bangunan tua dan lampu jalan sebagai latar belakang.</li>
+                    </ul>
+
+                    <h6 class="fw-bold mt-4">Tabel Informasi</h6>
+                    <table class="table table-bordered table-info">
+                        <tr><th>Tiket Masuk</th><td>Gratis (Jl. Raya), Rp5.000 (Kampung Heritage)</td></tr>
+                        <tr><th>Jam Terbaik</th><td>16.00 - 21.00 (Suasana lampu sangat indah)</td></tr>
+                        <tr><th>Lokasi</th><td>Jl. Basuki Rahmat, Kota Malang</td></tr>
+                        <tr><th>Fasilitas</th><td>Jalur pedestrian, Bangku taman, Kafe, Parkir luas</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Kuliner Cards -->
-    <div class="kuliner-card" data-category="gurih daging bakso">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Bakso_Malang.jpg" alt="Bakso Malang">
-      <div>
-        <h2>Bakso Malang</h2>
-        <p>Bakso Malang terkenal dengan variasi isi seperti bakso halus, bakso urat, tahu isi, siomay, dan pangsit goreng. Kuahnya gurih dan segar.</p>
-      </div>
+    <!-- Modal Museum Angkut -->
+    <div class="modal fade" id="modalMuseum" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title fw-bold">Eksplorasi: Museum Angkut</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <span class="info-tag">#Edukasi #Keluarga #Modern</span>
+                    <h6 class="fw-bold">Tentang Destinasi</h6>
+                    <p>Museum transportasi pertama di Asia Tenggara. Menghadirkan perpaduan edukasi otomotif dengan konsep zona tematik film-film dunia. Sangat cocok untuk wisata keluarga dan hobi fotografi.</p>
+                    
+                    <h6 class="fw-bold mt-4">Zona Unggulan</h6>
+                    <ul>
+                        <li><strong>Zona Hollywood:</strong> Replika set film dan karakter terkenal.</li>
+                        <li><strong>Gangster Town:</strong> Atmosfer kota bandit Amerika tahun 70-an.</li>
+                        <li><strong>Runway 27:</strong> Replika pesawat kepresidenan yang bisa dimasuki pengunjung.</li>
+                    </ul>
+
+                    <h6 class="fw-bold mt-4">Tabel Informasi</h6>
+                    <table class="table table-bordered table-info">
+                        <tr><th>Harga Tiket</th><td>Rp100.000 (Weekdays) - Rp120.000 (Weekend)</td></tr>
+                        <tr><th>Jam Operasional</th><td>12.00 - 20.00 WIB</td></tr>
+                        <tr><th>Lokasi</th><td>Jl. Sultan Agung No. 2, Kota Batu</td></tr>
+                        <tr><th>Tips</th><td>Jangan lewatkan Parade Mobil Klasik setiap jam 16.30!</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="kuliner-card" data-category="gurih sup daging rawon">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Rawon.jpg" alt="Rawon">
-      <div>
-        <h2>Rawon</h2>
-        <p>Rawon adalah sup daging khas Jawa Timur dengan kuah hitam dari kluwek. Rasanya gurih dan biasanya disajikan dengan nasi hangat.</p>
-      </div>
+    <!-- Modal Alun-Alun -->
+    <div class="modal fade" id="modalAlun" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title fw-bold">Eksplorasi: Alun-Alun Kota Malang</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <span class="info-tag">#Publik #Santai #Gratis</span>
+                    <h6 class="fw-bold">Daya Tarik</h6>
+                    <p>Alun-Alun Kota Malang adalah ruang terbuka hijau yang menjadi titik temu warga. Dikenal dengan ribuan merpati jinak dan air mancur menarinya, tempat ini menawarkan ketenangan di tengah hiruk pikuk kota.</p>
+                    
+                    <h6 class="fw-bold mt-4">Fasilitas & Kegiatan</h6>
+                    <ul>
+                        <li><strong>Area Playground:</strong> Wahana bermain anak yang aman dan terawat.</li>
+                        <li><strong>Religi:</strong> Dekat dengan Masjid Agung Jami dan Gereja GPIB Immanuel yang ikonik.</li>
+                        <li><strong>Kuliner:</strong> Dekat dengan pusat jajanan kaki lima legendaris.</li>
+                    </ul>
+
+                    <h6 class="fw-bold mt-4">Tabel Informasi</h6>
+                    <table class="table table-bordered table-info">
+                        <tr><th>Harga Tiket</th><td>Gratis</td></tr>
+                        <tr><th>Fasilitas Umum</th><td>Toilet, Mushola, Jalur Disabilitas, Wifi Gratis</td></tr>
+                        <tr><th>Lokasi</th><td>Jl. Merdeka Barat, Kota Malang</td></tr>
+                        <tr><th>Tips</th><td>Bawa biji jagung jika ingin memberi makan burung merpati.</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="kuliner-card" data-category="sayuran pedas kacang pecel">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Pecel.jpg" alt="Nasi Pecel">
-      <div>
-        <h2>Nasi Pecel</h2>
-        <p>Nasi pecel terdiri dari sayuran rebus dengan sambal kacang khas. Di Malang, pecel sering disajikan dengan rempeyek atau tempe goreng.</p>
-      </div>
+    <!-- Modal Tugu -->
+    <div class="modal fade" id="modalTugu" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title fw-bold">Eksplorasi: Monumen Tugu Malang</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <span class="info-tag">#Ikon #Monumen #BungaTeratai</span>
+                    <h6 class="fw-bold">Makna Monumen</h6>
+                    <p>Dibangun untuk memperingati kembalinya kedaulatan Indonesia dari penjajahan. Struktur tugu melambangkan bambu runcing, dan taman di sekelilingnya didesain dengan konsep simetris yang indah.</p>
+                    
+                    <h6 class="fw-bold mt-4">Keunikan</h6>
+                    <ul>
+                        <li><strong>Kolam Teratai:</strong> Kolam yang mengelilingi tugu dipenuhi bunga teratai (Lotus) yang mekar dengan indah.</li>
+                        <li><strong>Balai Kota:</strong> Berhadapan langsung dengan gedung pemerintahan yang memiliki arsitektur megah.</li>
+                        <li><strong>Pencahayaan:</strong> Di malam hari, tugu diterangi lampu LED warna-warni.</li>
+                    </ul>
+
+                    <h6 class="fw-bold mt-4">Tabel Informasi</h6>
+                    <table class="table table-bordered table-info">
+                        <tr><th>Tiket Masuk</th><td>Gratis</td></tr>
+                        <tr><th>Akses</th><td>Sangat dekat dengan Stasiun Malang Kota Baru (Jalan kaki 5 menit)</td></tr>
+                        <tr><th>Aktivitas</th><td>Olahraga pagi, Fotografi, Santai sore</td></tr>
+                        <tr><th>Peringatan</th><td>Dilarang memetik bunga teratai di kolam.</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <footer>
-    <p>&copy; 2026 Kuliner Malang | Semua hak cipta dilindungi</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <h5 class="fw-bold text-white mb-3">Jelajah Malang</h5>
+            <p>Informasi wisata terlengkap untuk pengalaman tak terlupakan di Kota Malang.</p>
+            <hr class="bg-secondary my-4">
+            <p class="small mb-0">&copy; 2026 Website Wisata Malang Project. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
 
-  <script>
-    // Fungsi pencarian
-    document.getElementById("searchInput").addEventListener("keyup", function() {
-      let filter = this.value.toLowerCase();
-      let cards = document.getElementsByClassName("kuliner-card");
-
-      for (let i = 0; i < cards.length; i++) {
-        let title = cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
-        let category = cards[i].getAttribute("data-category").toLowerCase();
-
-        if (title.includes(filter) || category.includes(filter)) {
-          cards[i].style.display = "flex";
-        } else {
-          cards[i].style.display = "none";
-        }
-      }
-    });
-  </script>
+    <!-- Bootstrap JS Bundle (PENTING: Agar modal & navigasi berfungsi) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
